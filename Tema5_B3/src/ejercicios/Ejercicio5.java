@@ -1,5 +1,6 @@
 package ejercicios;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio5 {
@@ -16,9 +17,12 @@ public class Ejercicio5 {
 		int[] tablaEnteros = new int[10];
 
 		// Creamos una nueva tabla, de tamaño 0 porque no sabemos cómo de grande será.
-		int[] tablaNueva = new int[0];
+		int[] tablaPares = new int[0];
+		int[] tablaImpares= new int [0];
 
-		int numDobles; // Variable donde se copiarán los números dobles.
+		int valor;
+		int indexPares=0; // Variable que indica la posición de la tablaPares.
+		int indexImpares=0; //Variables que indica la posición de la tablaImpares.
 
 		// Creamos un escáner para poder leer los datos que introduzca el usuario por
 		// consola.
@@ -31,9 +35,44 @@ public class Ejercicio5 {
 
 			System.out.print("Introduzca un número y pulse Intro: ");
 			tablaEnteros[i] = sc.nextInt();
+			
+			valor= tablaEnteros[i]; 
+			
+			//Ahora separamos los números pares de los impares.
+			//En caso de que sean pares, guardamos esos números en la tablaPares.
+			if (valor%2==0) {
+				
+				//Para ello, necesitamos que la tablaPares vaya aumentando según necesidad.
+				tablaPares= Arrays.copyOf(tablaPares, tablaPares.length+1);
+				
+				//Ahora, guardaremos los valores en la tablaPares.
+				tablaPares[indexPares]=valor;
+				
+				//Aumentamos en 1 la posición que tiene la tabla.
+				indexPares++;
+				
+			//Repetimos lo mismo con los números impares.
+			} else {
+				
+				tablaImpares= Arrays.copyOf(tablaImpares, tablaImpares.length+1);
+				
+				tablaImpares [indexImpares]= valor;
+				
+				indexImpares++;
+			}
 
 		}
-
+		
+		//Imprimimos las dos tablas.
+		
+		System.out.println("A continuación se muestra la tabla de números pares: ");
+		System.out.println(Arrays.toString(tablaPares));
+		
+		System.out.println("Y la tabla de números impares: ");
+		System.out.println(Arrays.toString(tablaImpares));
+		
+		//Cerramos el escáner.
+		sc.close();
 	}
 
 }
