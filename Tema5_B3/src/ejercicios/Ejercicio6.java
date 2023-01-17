@@ -14,14 +14,15 @@ public class Ejercicio6 {
 		
 		//Creamos dos arrays de tamaño cien.
 		 
-		int [] tabla= new int[101]; 
-		int [] tablaInversa= new int [101];
+		int [] tabla= new int[100]; 
+		int [] tablaInversa= new int [100];
 		
 		//Rellenamos el primer array de 1 a 100.
 		
-		for (int i= 1; i<tabla.length; i++) {
+		for (int i= 0; i<tabla.length; i++) {
 			
-			tabla [i]=i;
+			//Le sumamos 1 para que inice la tabla en 1 y no en 0.
+			tabla [i]=i+1;
 			
 		}
 		
