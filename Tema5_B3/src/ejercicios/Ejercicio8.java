@@ -1,5 +1,6 @@
 package ejercicios;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio8 {
@@ -19,7 +20,7 @@ public class Ejercicio8 {
 		// Creamos el array de longitud 0 porque no sabemos su tamaño y las variables
 		// necesarias.
 
-		int[] tabla = new int[0];
+		
 		int valorInicial; //Valor inicial.
 		int incremento; //El incremento.
 		int numValores; //Valores a crear.
@@ -33,8 +34,33 @@ public class Ejercicio8 {
 		System.out.print("Introduzca el valor inicial de la secuencia aritmética y pulse Intro: ");
 		valorInicial= sc.nextInt();
 		
-		System.out.print("Introduzca el valor inicial de la secuencia aritmética y pulse Intro: ");
-		valorInicial= sc.nextInt();
+		System.out.print("Introduzca el incremento de la secuencia aritmética y pulse Intro: ");
+		incremento= sc.nextInt();
+		
+		System.out.print("Introduzca el número de valores que quiere que tenga la secuencia aritmética y pulse Intro: ");
+		numValores= sc.nextInt();
+		
+		int[] tabla = new int[numValores];
+		
+		//Hacemos un bucle for, que empezará con el valor inicial y terminará según los valores introducidos.
+		for (int i=0; i<tabla.length; i++) {
+			
+			
+			
+			//ASignamos un valor.
+			tabla[i]=valorInicial;
+			
+			//Vamos sumando el incremento.
+			valorInicial+=incremento;
+		
+		}
+		
+		//Imprimimos el resultado.
+		
+		System.out.println(Arrays.toString(tabla));
+		
+		//Cerramos el escáner.
+		sc.close();
 		
 	}
 
